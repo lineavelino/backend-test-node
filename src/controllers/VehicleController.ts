@@ -20,6 +20,18 @@ class VehicleController {
             return res.status(500).send(error);
         }
     }
+
+    async listAllVehicles(req: Request, res: Response) {
+        try {
+            const service = new VehicleService();
+
+            const allVehicles = await service.listAll();
+
+            return res.status(200).send({ data: allVehicles });
+        } catch (error) {
+            return res.status(500).send(error);
+        }
+    }
 }
 
 export { VehicleController };

@@ -6,3 +6,4 @@ export const vehicleRoutes = express.Router();
 const vehicleController = new VehicleController();
 
 vehicleRoutes.post("/vehicles", vehicleController.createVehicle);
+vehicleRoutes.get("/vehicles", vehicleController.listAllVehicles);

@@ -19,6 +19,12 @@ class VehicleRepository {
         await vehicle.save();
         return vehicle;
     }
+
+    async findAll() {
+        const allVehicles = await VehicleModel.find();
+
+        return allVehicles;
+    }
 }
 
 export { VehicleRepository };

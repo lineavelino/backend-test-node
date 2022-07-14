@@ -12,6 +12,12 @@ class VehicleService {
 
         return vehicle.create(brand, color, model, plate, type);
     }
+
+    listAll() {
+        const vehicle = new VehicleRepository();
+
+        return vehicle.findAll();
+    }
 }
 
 export { VehicleService };
