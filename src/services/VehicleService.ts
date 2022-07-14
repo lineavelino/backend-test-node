@@ -31,6 +31,12 @@ class VehicleService {
 
         return vehicle.updateOne(id, brand, color, model, plate, type);
     }
+
+    delete(id: string) {
+        const vehicle = new VehicleRepository();
+
+        return vehicle.deleteOne(id);
+    }
 }
 
 export { VehicleService };

@@ -45,6 +45,12 @@ class VehicleRepository {
 
         return vehicle;
     }
+
+    async deleteOne(id: string) {
+        const vehicle = await VehicleModel.deleteOne({ id });
+
+        return vehicle;
+    }
 }
 
 export { VehicleRepository };

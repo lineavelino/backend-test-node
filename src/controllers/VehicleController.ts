@@ -47,6 +47,20 @@ class VehicleController {
             return res.status(500).send({ error });
         }
     }
+
+    async deleteVehicle(req: Request, res: Response) {
+        try {
+            const { id } = req.params;
+
+            const service = new VehicleService();
+
+            await service.delete(id);
+
+            return res.status(200).send({ status: "Excluído com sucesso." });
+        } catch (error) {
+            return res.status(500).send({ error });
+        }
+    }
 }
 
 export { VehicleController };
