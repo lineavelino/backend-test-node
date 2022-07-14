@@ -25,6 +25,26 @@ class VehicleRepository {
 
         return allVehicles;
     }
+
+    async updateOne(
+        id: string,
+        brand: string,
+        color: string,
+        model: string,
+        plate: string,
+        type: string
+    ) {
+        const vehicle = await VehicleModel.updateOne({
+            id,
+            brand,
+            color,
+            model,
+            plate,
+            type
+        });
+
+        return vehicle;
+    }
 }
 
 export { VehicleRepository };

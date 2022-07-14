@@ -32,6 +32,21 @@ class VehicleController {
             return res.status(500).send(error);
         }
     }
+
+    async updateVehicle(req: Request, res: Response) {
+        try {
+            const { id } = req.params;
+            const { brand, color, model, plate, type } = req.body;
+
+            const service = new VehicleService();
+
+            await service.update(id, brand, color, model, plate, type);
+
+            return res.status(201).send({ status: "Atualizado com sucesso." });
+        } catch (error) {
+            return res.status(500).send({ error });
+        }
+    }
 }
 
 export { VehicleController };

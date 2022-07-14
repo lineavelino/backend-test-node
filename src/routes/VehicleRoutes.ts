@@ -7,3 +7,4 @@ const vehicleController = new VehicleController();
 
 vehicleRoutes.post("/vehicles", vehicleController.createVehicle);
 vehicleRoutes.get("/vehicles", vehicleController.listAllVehicles);
+vehicleRoutes.put("/vehicles/:id", vehicleController.updateVehicle);
