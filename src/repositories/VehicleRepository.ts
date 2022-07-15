@@ -34,8 +34,7 @@ class VehicleRepository {
         plate: string,
         type: string
     ) {
-        const vehicle = await VehicleModel.updateOne({
-            id,
+        const vehicle = await VehicleModel.where({ _id: id }).updateOne({
             brand,
             color,
             model,
