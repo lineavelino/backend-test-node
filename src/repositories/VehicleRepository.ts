@@ -46,7 +46,7 @@ class VehicleRepository {
     }
 
     async deleteOne(id: string) {
-        const vehicle = await VehicleModel.deleteOne({ id });
+        const vehicle = await VehicleModel.deleteOne({ _id: id });
 
         return vehicle;
     }
