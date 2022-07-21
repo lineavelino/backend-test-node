@@ -19,6 +19,37 @@ class VehicleRepository {
         await vehicle.save();
         return vehicle;
     }
+
+    async findAll() {
+        const allVehicles = await VehicleModel.find();
+
+        return allVehicles;
+    }
+
+    async updateOne(
+        id: string,
+        brand: string,
+        color: string,
+        model: string,
+        plate: string,
+        type: string
+    ) {
+        const vehicle = await VehicleModel.where({ _id: id }).updateOne({
+            brand,
+            color,
+            model,
+            plate,
+            type
+        });
+
+        return vehicle;
+    }
+
+    async deleteOne(id: string) {
+        const vehicle = await VehicleModel.deleteOne({ _id: id });
+
+        return vehicle;
+    }
 }
 
 export { VehicleRepository };
