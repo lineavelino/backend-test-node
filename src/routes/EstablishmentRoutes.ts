@@ -9,3 +9,15 @@ establishmentRoutes.post(
     "/establishments",
     establishmentController.createEstablishment
 );
+establishmentRoutes.get(
+    "/establishments",
+    establishmentController.listAllEstablishments
+);
+establishmentRoutes.put(
+    "/establishments/:id",
+    establishmentController.updateEstablishment
+);
+establishmentRoutes.delete(
+    "/establishments/:id",
+    establishmentController.deleteEstablishment
+);
